@@ -45,7 +45,7 @@ export interface Sponsorship {
 
 export type OutputFormat = 'svg' | 'png' | 'json'
 
-export type ProviderName = 'github'
+export type ProviderName = 'github' | 'opencollective'
 
 export interface ProvidersConfig {
   github?: {
@@ -63,6 +63,32 @@ export interface ProvidersConfig {
      * @deprecated It's not recommended set this value directly, pass from env or use `.env` file.
      */
     token?: string
+  }
+  opencollective?: {
+    /**
+     * Api key of your OpenCollective account.
+     *
+     * Will read from `SPONSORKIT_OPENCOLLECTIVE_KEY` environment variable if not set.
+     */
+    key?: string
+    /**
+     * The id of your collective.
+     *
+     * Will read from `SPONSORKIT_OPENCOLLECTIVE_ID` environment variable if not set.
+     */
+    id?: string
+    /**
+     * The slug of your collective.
+     *
+     * Will read from `SPONSORKIT_OPENCOLLECTIVE_SLUG` environment variable if not set.
+     */
+    slug?: string
+    /**
+     * The GitHub handle of your collective.
+     *
+     * Will read from `SPONSORKIT_OPENCOLLECTIVE_GH_HANDLE` environment variable if not set.
+     */
+    githubHandle?: string
   }
 }
 

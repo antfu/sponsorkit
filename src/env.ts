@@ -32,6 +32,7 @@ export function loadEnv(): Partial<SponsorkitConfig> {
       userId: process.env.SPONSORKIT_AFDIAN_USER_ID || process.env.AFDIAN_USER_ID,
       token: process.env.SPONSORKIT_AFDIAN_TOKEN || process.env.AFDIAN_TOKEN,
       exechangeRate: Number.parseFloat(process.env.SPONSORKIT_AFDIAN_EXECHANGERATE || process.env.AFDIAN_EXECHANGERATE) || undefined,
+      webAuthToken: process.env.SPONSORKIT_AFDIAN_WEB_AUTH_TOKEN || process.env.AFDIAN_WEB_AUTH_TOKEN,
     },
     outputDir: process.env.SPONSORKIT_DIR,
   }

@@ -147,6 +147,14 @@ export interface ProvidersConfig {
      * @default 6.5
      */
     exechangeRate?: number
+    /**
+     * Afdian Web Token got from document.cookie.
+     *
+     * Will read from `SPONSORKIT_AFDIAN_TOKEN` environment variable if not set.
+     *
+     * @deprecated It's not recommended set this value directly, pass from env or use `.env` file.
+     */
+    webAuthToken?: string
   }
 }
 

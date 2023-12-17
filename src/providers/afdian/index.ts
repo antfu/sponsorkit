@@ -1,13 +1,14 @@
 import { createHash } from 'node:crypto'
 import { $fetch } from 'ofetch'
-import type { Provider, SponsorkitConfig, Sponsorship } from '../types'
+import type { Provider, SponsorkitConfig, Sponsorship } from '../../types'
+import { fetchAfdianMonthlySponsors } from './get-monthly-orders'
 
 // afdian api docs https://afdian.net/p/9c65d9cc617011ed81c352540025c377
 
 export const AfdianProvider: Provider = {
   name: 'afdian',
   fetchSponsors(config) {
-    return fetchAfdianSponsors(config.afdian)
+    return config.afdian?.webAuthToken ? fetchAfdianMonthlySponsors(config.afdian) : fetchAfdianSponsors(config.afdian)
   },
 }
 
